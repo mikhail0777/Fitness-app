@@ -1,0 +1,14 @@
+
+<h2>Your Fitness Logs</h2>
+<form method="POST" action="/logs/add">
+  <input type="text" name="exercise" placeholder="Exercise">
+  <input type="number" name="duration" placeholder="Duration (min)">
+  <input type="date" name="date">
+  <button type="submit">Add Log</button>
+</form>
+<ul>
+  {{#each logs}}
+    <li>{{this.exercise}} - {{this.duration}} min on {{this.date}}</li>
+  {{/each}}
+</ul>
+<a href="/logout">Logout</a>
